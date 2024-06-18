@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="zh-Hants">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Pin Han的個人網頁</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./網頁物件/favicon.ico" type="image/svg+xml">
+  
+
+<!-- 
+    - preload images 預加載圖片
+  -->
+  <link rel="preload" href="./assets/images/hero-banner.png">
+
+
+  </head> 
+
+  <body>
+
+<!-- 
+    - #PRELOADER 預加載器元素
+  -->
+
+  <div class="preloader" data-preloader>
+    <div class="preloader-circle"></div>
+  </div>
+
+    <!-- <div class="img-area">
+          <img src="./首頁照片/網頁封面-3_design copy .jpg" alt="首頁照片" /> -->
+          <body style="background-color: #FCF8F0;">
+   
+    <div>
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a target="_blank" href="./project.html">Project</a></li>
+          <li><a href="#about">About</a></li>
+          <li>
+            <a target="_blank" href="./contact.html">Contacts</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <header>
+      <img
+        class="block"
+        src="./網頁物件/導覽方塊_工作區域 1.png"
+        alt="導覽方塊"
+      />
+      <img
+        class="straight-line"
+        src="./網頁物件/直線_工作區域 1.png"
+        alt="直線"
+      />
+      <img
+        class="horizontal-line"
+        src="./網頁物件/橫線_工作區域 1.png"
+        alt="橫線"
+      />
+
+
+      <img
+        class="gray pos-3d"
+        data-layer="25"
+        src="./網頁物件/灰色圓形物件_工作區域 1-01.png"
+        alt="灰色圓形物件"
+      />
+
+      <img class="blue" src="./網頁物件/藍物件_工作區域 1.png" alt="藍物件" />
+
+      <img class="yellow" src="./網頁物件/黃物件_工作區域 1.png" alt="黃物件" />
+
+      <img
+        class="pink pos-3d"
+        data-layer="15"
+        data-invert="1"
+        src="./網頁物件/淡粉物件_工作區域 1.png"
+        alt="淡粉物件"
+      />
+
+      <img
+        class="darkPink pos-3d"
+        data-layer="15"
+        data-invert="1"
+        src="./網頁物件/煙燻粉圓形_工作區域 1.png"
+        alt="煙燻粉圓形"
+      />
+
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="header-content">
+            <button class="menu">&#9776;</button>
+
+            <p>
+              嗨！我是Karen，有著電商、廣告行銷經驗的平面設計師，現
+              <br />
+              在正朝著成為一名前端設計師的目標邁進。
+            </p>
+            <br />
+            <p>
+              我希望將設計技能應用於前端開發，並將美學眼光和用戶體驗
+              <br />
+              知識帶到網頁設計中。
+              <br />
+            </p>
+            <br />
+            <p>
+              我正在不斷學習前端開發的相關技術，包括HTML、CSS和
+              <br />
+              JavaScript，並積極參與線上課程和項目實踐，以加速我的
+              <br />
+              轉型過程。
+              <br />
+              我期待能夠在前端設計領域中挑戰自己，並為創建出色的網頁
+              <br />
+              和互動體驗做出貢獻。
+            </p>
+
+            <div>
+              <h2 class="display-h2 mb-24 d-inline-block p-relative">
+                我是
+                <span class="last-h2 typing-effect" id="typing"
+                  >前端工程師
+                </span>
+                <span class="type-blink"></span>
+              </h2>
+            </div>
+
+            <div>
+              <!-- <h1>Web Portfolio</h1> -->
+              <h1>
+                <span class="portfolio"
+                  >Web Port<span class="folio">folio</span></span
+                >
+              </h1>
+            </div>
+
+            <div>
+              <button type="button" class="custom-button">
+                <img src="./網頁物件/搜尋欄位_工作區域 1.png" alt="Search" />
+              </button>
+            </div>
+          </div>
+        </div>
+          <!-- 首頁人物 -->
+        <div class="col-md-4 offset-md-1">
+          <div class="image-container">
+            <img
+              src="./網頁物件/人物背影合體_工作區域 1.png"
+              class="pos-3d"
+              data-layer="7"
+              data-invert="1"
+              alt="人物照片"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="section"></section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.addEventListener("mousemove", (e) => {
+          //傳入滑鼠位置
+          document.querySelectorAll(".pos-3d").forEach((element) => {
+            add3d(element, e);
+          });
+        });
+      });
+
+      function add3d(element, e) {
+        // 滑鼠位置
+        const m_x = e.pageX;
+        const m_y = e.pageY;
+
+        const w_w = window.innerWidth,
+          w_h = window.innerHeight,
+          o_w = element.offsetWidth,
+          distance = (element.offsetWidth - w_w) / 2,
+          layer = Number(element.getAttribute("data-layer")),
+          invert = Number(element.getAttribute("data-invert"));
+
+        // 物件在頁面上的位置
+        const o_x = w_w / 2;
+        const o_y = w_h / 2;
+
+        // 兩者的距離差
+        let w_x = m_x - o_x;
+        let w_y = m_y - o_y;
+
+        // 距離相乘後開平方
+        const w_wSqrt = Math.sqrt(w_w / 2);
+        const d = distance / w_wSqrt / layer;
+
+        // 距離計算
+        let s_x = Math.sqrt(Math.abs(w_x));
+        if (w_x < 0) {
+          s_x = -s_x;
+        }
+
+        let d_x = s_x * d;
+        // 加入樣式
+        element.style.transform = `translateX(${invert ? d_x : -d_x}px)`;
+      }
+    </script>
+
+    <script>
+      // 打字特效
+      const texts = ["UI 設計師", "前端工程師"];
+      let count = 0;
+      let index = 0;
+      let currentText = "";
+      let letter = "";
+
+      (function type() {
+        if (count === texts.length) {
+          count = 0;
+        }
+        currentText = texts[count];
+        letter = currentText.slice(0, ++index);
+
+        document.getElementById("typing").textContent = letter;
+        if (letter.length === currentText.length) {
+          count++;
+          index = 0;
+          setTimeout(type, 3000);
+        } else {
+          setTimeout(type, 150);
+        }
+      })();
+    </script>
+</div>
+
+    <section id="about">
+      <!-- <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1> -->
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img
+            src="./images/自畫像-banner.png"
+            alt="Profile picture"
+            class="about-pic"
+          />
+        </div>
+
+        <div class="line-container">
+          <img
+            src="./網頁物件/line1.png"
+            alt="line1"
+            class="line1"
+          />
+        <img
+        src="./網頁物件/line2.png"
+        alt="line2"
+        class="line2"
+      />
+      <img
+      src="./網頁物件/line3.png"
+      alt="line3"
+      class="line3"
+    />
+  </div>
+       
+              <main> 
+ <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" aria-label="about me">
+        <div class="container">
+
+          <!-- <figure class="about-banner">
+            <img src="./images/自畫像-banner.png" width="400" height="400"  top="-40px"
+            left="-150px" loading="lazy"
+              alt="karen" class="w-100">
+          </figure> -->
+
+          <div class="about-content">
+
+            <h2 class="title-lg">About Me</h2>
+
+            <p class="body-md section-text">
+              My major was Visual Communication Design. In my college period, I
+              put a lot of effort into learning every courses that school
+              offered， such as Graphic Design, Animation and Filming. I am
+              familiar with designing tools like Adobe Photoshop,Illustrator,
+              Indesign,etc. 
+              I am an easy-going person and I can get along with colleagues very well in any situations. Of
+              course, I will never ignore the importance of teamwork. 
+            </p>
+
+
+            <div class="wrapper">
+              <a href="./contact.html" class="btn btn-primary">Contact Me</a>
+
+              <a href="./project.html" class="btn btn-secondary btn-orange-shadow">Project</a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+<!-- 
+        - #SKILL
+      -->
+                <section class="section skill" aria-labelledby="skill-label">
+                  <div class="container">
+          
+                    <div class="skill-content">
+          
+                      <h2 class="section-title headline-md" id="skill-label">My Skills</h2>
+          
+                      <ul class="skill-list">
+          
+                        <li>
+                          <div class="card card-sm" style="background-color: hsl(177, 39%, 72%)">
+          
+                            <div class="card-media">
+                              <ion-icon name="logo-html5"></ion-icon>
+                            </div>
+          
+                            <h2 class="card-title">HTML</h2>
+          
+                          </div>
+                        </li>
+          
+                        <li>
+                          <div class="card card-sm" style="background-color: hsl(41, 99%, 64%)">
+          
+                            <div class="card-media">
+                              <ion-icon name="logo-css3"></ion-icon>
+                            </div>
+          
+                            <h2 class="card-title">CSS</h2>
+          
+                          </div>
+                        </li>
+          
+                        <li>
+                          <div class="card card-sm" style="background-color: hsl(19, 97%, 85%)">
+          
+                            <div class="card-media">
+                              <ion-icon name="logo-react"></ion-icon>
+                            </div>
+          
+                            <h2 class="card-title">React JS</h2>
+          
+                          </div>
+                        </li>
+          
+                        <li>
+                          <div class="card card-sm" style="background-color: hsl(221, 100%, 79%)">
+          
+                            <div class="card-media">
+                              <ion-icon name="logo-javascript"></ion-icon>
+                            </div>
+          
+                            <h2 class="card-title">JavaScript</h2>
+          
+                          </div>
+                        </li>
+          
+                        <li>
+                          <div class="card card-sm" style="background-color: hsl(76, 39%, 72%)">
+          
+                            <div class="card-media">
+                              <img class="adobe-icon" src="./網頁物件/adobe-illustrator.png" alt="logo-illustrator">
+                            </div>
+          
+                            <h2 class="card-title">Illustrator</h2>
+          
+                          </div>
+                        </li>
+          
+                        <li>
+                          <div class="card card-sm" style="background-color: hsl(245, 100%, 90%)">
+          
+                            <div class="card-media">
+                              <img class="adobe-icon" src="./網頁物件/adobe-photoshop.png" alt="logo-photoshop">
+                            </div>
+          
+                            <h2 class="card-title">Photoshop</h2>
+          
+                          </div>
+                        </li>
+          
+                      </ul>
+          
+                    </div>
+
+                    <figure class="skill-banner">
+                      <img src="./網頁物件/webpic-1-01.png" width="700" height="auto" loading="lazy"
+                        alt="webpic" class="w-100">
+                    </figure>
+<div class="people">
+  <div class="people01">
+    <img src="./網頁物件/people01.png" width="120" height="220" alt="people01">
+   </div>
+  <div class="people02">
+    <img src="./網頁物件/people02.png" width="100" height="180" alt="people02">
+  </div>
+</div>
+              </main>
+
+<!-- 
+    - ionicon icon網站連結
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+  </body>
+</html>

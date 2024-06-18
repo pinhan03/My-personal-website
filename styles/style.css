@@ -1,0 +1,903 @@
+@charset "UTF-8";
+@import "./components/btn.css";
+@import "./silder.css";
+@import "./components/card.css";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.my-element {
+  width: 100%;
+  height: 750px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  top: 35px;
+  left: 120px;
+  z-index: 1;
+}
+
+header {
+  position: relative; /* 使用相對定位 */
+  width: 100%; /* 設置寬度 */
+}
+
+.header-content h1,
+.header-content h2,
+.header-content p {
+  text-align: justify;
+}
+
+.header-content h1 {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 130px;
+  position: relative;
+  top: 110px;
+  left: 130px;
+  color: rgb(43, 74, 128);
+  z-index: 3;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.d-inline-block {
+  display: inline-block !important;
+}
+
+.header-content h2 span.display-h2 {
+  font-size: 40px;
+  font-family: "Noto Sans TC", sans-serif;
+  color: black;
+  font-weight: 800;
+  letter-spacing: 4px;
+  font-weight: lighter;
+}
+
+.header-content h2 span.last-h2 {
+  font-size: 50px;
+  font-family: M 翔鶴黑體 TC Black;
+  color: black;
+  letter-spacing: 5px;
+}
+
+/* 打字動畫效果 */
+.type-blink {
+  display: inline-block;
+  position: relative;
+}
+
+.type-blink::after {
+  content: "";
+  width: 3px;
+  height: 68px;
+  background-image: linear-gradient(to bottom, rgb(70, 175, 164), rgb(70, 175, 164));
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  transform: translateY(-50%);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+.d-inline-block {
+  display: inline-block;
+}
+
+.display-h1 {
+  font-size: 60px;
+  line-height: 1.2;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.p-relative {
+  position: relative;
+}
+
+.p-absolute {
+  position: absolute;
+}
+
+.pt-20 {
+  padding-top: 20px;
+}
+
+.pb-20 {
+  padding-bottom: 20px;
+}
+
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.px-60 {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.z-index--1 {
+  z-index: -1;
+}
+
+.header-content h1 span.portfolio ::after {
+  position: absolute;
+  content: " ";
+  -webkit-text-stroke: 3px rgb(43, 74, 128);
+  -webkit-text-fill-color: transparent;
+  color: rgb(43, 74, 128); /* 将 "Web Port" 文字颜色设置为蓝色 */
+  letter-spacing: 1px;
+  opacity: 0;
+  animation: fadein 1s ease-in-out forwards;
+}
+
+.header-content h1 span.portfolio {
+  letter-spacing: 1px;
+  color: transparent;
+  background-image: linear-gradient(to right, rgb(43, 74, 128), rgb(43, 74, 128), transparent);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position-x: 200%;
+  animation: fillup 2s ease-in-out forwards infinite;
+  animation-delay: 0.9s; /* 1秒間隔 */
+  animation-duration: 5s; /* 動畫總時長 */
+}
+
+@keyframes fillup {
+  from {
+    background-position-x: 200%;
+  }
+  to {
+    background-position-x: 0%;
+  }
+}
+@keyframes fadein {
+  from {
+    transform: translateY(-90%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+.header-content h1 span.folio {
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* 设置文字描边颜色 */
+  -webkit-text-stroke: 3px rgb(249, 124, 8); /* Safari 和 Chrome */
+  letter-spacing: 7px;
+}
+
+.header-content h1 span.folio {
+  letter-spacing: 1px;
+  color: transparent;
+  background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 255, 255), transparent);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+  -webkit-background-clip: text;
+  background-position-x: 200%;
+  animation: fillup 2s ease-in-out forwards infinite;
+  animation-delay: 1s; /* 1秒間隔 */
+  animation-duration: 5s; /* 動畫總時長 */
+}
+
+.header-content h2 {
+  font-family: Humanist 531 Ultra Black BT, Arial Black;
+  font-size: 40px;
+  position: relative;
+  top: 140px;
+  left: 130px;
+}
+
+.header-content p {
+  font-family: 蘋方-繁, 微軟正黑體;
+  font-size: 15px;
+  position: relative; /* 使用相對定位 */
+  top: 140px; /* 将 p 文字向下移动 20px */
+  left: 130px;
+}
+
+.custom-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}
+
+.custom-button img {
+  width: 300px; /* 设置图像宽度 */
+  height: auto; /* 让高度按比例自动调整 */
+  display: block; /* 使图像水平居中 */
+  position: relative;
+  top: 110px;
+  left: 110px;
+  transition: box-shadow 0.15s;
+  box-shadow: none;
+}
+
+.custom-button img:hover {
+  box-shadow: 0px 3px 8px rgba(150, 150, 150, 0.1); /* 悬停时应用阴影 */
+}
+
+.block {
+  position: absolute;
+  top: 25px; /* 與頂部的距離 */
+  right: 30px; /* 與右側的距離 */
+  width: 80px; /* 設置寬度 */
+  height: 80px; /* 設置高度 */
+}
+
+.straight-line {
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 95px;
+}
+
+.horizontal-line {
+  position: absolute;
+  top: 35px;
+  right: 500px;
+  width: 200px;
+}
+
+.menu {
+  display: none;
+}
+
+.nav {
+  position: absolute; /* 使用絕對定位 */
+  top: 55px; /* 與頂部的距離 */
+  right: 120px; /* 與右側的距離 */
+  z-index: 1; /* 確保導航在圖片上方 */
+  font-family: JosefinSans◆, SukhumvitSet-SemiBold;
+  font-size: 20px;
+  word-spacing: 25px;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li {
+  display: inline-block;
+  list-style-type: none;
+  margin-right: 10px;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+  text-decoration: none;
+  transition: all 0.1s ease;
+}
+.nav ul li a:hover {
+  color: rgb(252, 124, 8);
+}
+
+.image-container {
+  position: relative;
+  width: 100%; /* 使用相對寬度 */
+  height: auto; /* 讓高度按比例自動調整 */
+}
+
+/* 首頁人物 */
+.image-container img {
+  position: absolute;
+  top: -510px;
+  right: 100px;
+  width: 500px; /* 設定圖片的寬度 */
+  height: auto; /* 讓高度按比例自動調整 */
+  margin-inline: auto;
+}
+
+.gray {
+  position: absolute;
+  top: 220px;
+  right: 28px;
+  width: 600px;
+  height: auto;
+  z-index: -2;
+}
+
+.blue {
+  position: absolute;
+  top: -160px;
+  right: -100px;
+  width: 400px;
+  height: auto;
+  z-index: -3;
+}
+
+.yellow {
+  position: absolute;
+  top: 500px;
+  right: -100px;
+  width: 500px;
+  height: auto;
+  z-index: -3;
+}
+
+.pink {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 500px;
+  height: auto;
+  z-index: -3;
+}
+
+.darkPink {
+  position: absolute;
+  top: 550px;
+  left: -300px;
+  width: 450px;
+  height: auto;
+  z-index: -3;
+}
+
+/* ABOUT SECTION */
+#about {
+  position: relative;
+  top: 180px;
+  left: 130px;
+}
+
+.section__text__p1,
+.title {
+  text-align: center;
+}
+
+.title {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 50px;
+  position: relative;
+  top: 30px;
+  left: 15px;
+  color: rgb(43, 74, 128);
+  z-index: 3;
+}
+
+.section__text__p1 {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 20px;
+  position: relative;
+  top: 30px;
+  left: 15px;
+  color: rgb(43, 74, 128);
+  z-index: 3;
+}
+
+.about-containers {
+  position: relative;
+  top: 70px;
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* 設置子元素之間的間距 */
+}
+
+.about-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-containers,
+.about-details-container {
+  display: flex;
+}
+
+.about-pic {
+  width: 500px;
+  height: auto;
+  z-index: 3;
+}
+
+.arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+.details-container {
+  padding: 3rem;
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  text-align: center;
+  z-index: -2;
+  width: 380px;
+}
+
+.section-container {
+  gap: 4rem;
+  height: 80%;
+}
+
+.section__pic-container {
+  position: absolute;
+  height: 400px;
+  width: 400px;
+  top: 60px;
+  left: -50px;
+}
+
+.line-container {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  opacity: 0; /* 初始透明度 */
+}
+
+.line1 {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 55px;
+  left: 170px;
+  animation: blink1 1s infinite;
+}
+
+.line2 {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  top: 55px;
+  left: 200px;
+  animation: blink2 1.5s infinite;
+}
+
+.line3 {
+  position: absolute;
+  height: 35px;
+  width: 35px;
+  top: 95px;
+  left: 215px;
+  animation: blink3 2s infinite;
+}
+
+@keyframes blink1 {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes blink2 {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+@keyframes blink3 {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.icon {
+  display: flex;
+  position: absolute;
+  height: auto;
+  width: 45px;
+  top: 10px;
+  left: 360px;
+}
+
+.details-container h3 {
+  position: relative;
+  top: 20px;
+  line-height: 0.5;
+}
+
+.details-container p {
+  position: relative;
+  top: 30px;
+  margin-bottom: 10px; /* 调整这里的数值以改变上下间距 */
+  line-height: 1.5; /* 调整行高以增加行间距 */
+}
+
+.text-container {
+  font-size: 15px;
+  position: relative;
+  word-wrap: overflow-wrap; /* 或者使用 overflow-wrap: break-word; */
+  white-space: normal;
+  top: 90px;
+  left: 370px;
+  width: 600px;
+}
+
+.icon2 {
+  display: flex;
+  position: absolute;
+  height: auto;
+  width: 40px;
+  top: 15px;
+  right: 360px;
+}
+
+.icon-arrow {
+  position: fixed;
+  height: auto;
+  width: 40px;
+  bottom: 20px;
+  right: 30px;
+}
+
+/* EXPERIENCE SECTION */
+#experience {
+  position: relative;
+}
+
+.experience-sub-title {
+  position: relative;
+  top: 230px;
+  color: rgb(85, 85, 85);
+  font-weight: 600;
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.experience-details-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.article-container {
+  position: relative;
+  top: 70px;
+  display: flex;
+  text-align: initial;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.section__text__p2,
+.title2 {
+  text-align: center;
+}
+
+.title2 {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 50px;
+  position: relative;
+  top: 300px;
+  left: 150px;
+  color: rgb(43, 74, 128);
+  z-index: 3;
+}
+
+.section__text__p2 {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 20px;
+  position: relative;
+  top: 300px;
+  left: 150px;
+  color: rgb(43, 74, 128);
+  z-index: 3;
+}
+
+.article-container h3 {
+  position: relative;
+  top: 180px;
+  line-height: 0.5;
+}
+
+.article-container p {
+  position: relative;
+  top: 180px;
+  margin-bottom: 10px; /* 调整这里的数值以改变上下间距 */
+  line-height: 1.5; /* 调整行高以增加行间距 */
+}
+
+article {
+  display: flex;
+  width: 10rem;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+article .icon {
+  cursor: default;
+}
+
+/*-----------------------------------*\
+  #ABOUT
+\*-----------------------------------*/
+.title-lg {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 45px;
+  position: absolute;
+  top: 150px;
+  left: 530px;
+  color: rgb(43, 74, 128);
+  z-index: 3;
+}
+
+.about .container {
+  display: grid;
+  gap: 50px;
+}
+
+.about .section-text {
+  margin-block: 25px 16px;
+  position: absolute;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  top: 190px;
+  left: 530px;
+  word-wrap: overflow-wrap; /* 或者使用 overflow-wrap: break-word; */
+  white-space: normal;
+  width: 600px;
+}
+
+.about-list {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.about-list .list-text {
+  color: #2b4a80;
+  font-weight: 500;
+}
+
+.about-list .strong {
+  color: #f97c08;
+  display: block;
+}
+
+.about .wrapper {
+  margin-block-start: 25px;
+  display: flex;
+  position: absolute;
+  top: 390px;
+  flex-wrap: wrap;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(174%);
+  gap: 15px 25px;
+}
+
+/*-----------------------------------*\
+  #SKILLS
+\*-----------------------------------*/
+.skill {
+  padding-block-end: 0;
+  margin-top: 640px;
+}
+
+#skill-label {
+  font-family: Humanist 531 Ultra BT, Arial;
+  font-size: 45px;
+  position: absolute;
+  top: 550px;
+  left: 10px;
+  color: rgb(43, 74, 128);
+}
+
+.skill .container,
+.skill-list {
+  display: grid;
+}
+
+.skill .container {
+  gap: 50px;
+}
+
+.skill-banner {
+  position: absolute;
+  top: 480px;
+  right: 110px;
+  /* 右侧的技能横幅样式 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.skills-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* 两列布局，左边两份，右边一份 */
+  gap: 20px; /* 列间距 */
+  align-items: start; /* 对齐项的顶部 */
+}
+
+.skill-list {
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 左侧的技能列表按两列排列 */
+  list-style: none;
+  gap: 30px;
+}
+
+.skill .card ion-icon {
+  font-size: 3rem;
+}
+
+.skill .card .card-title {
+  color: #333;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.people01 {
+  position: absolute;
+  bottom: 40px;
+  right: 540px;
+  animation: moveUpDown01 2s alternate infinite;
+  z-index: 5;
+}
+
+.people02 {
+  position: absolute;
+  bottom: 120px;
+  right: 385px;
+  animation: moveUpDown02 1.5s steps(8) infinite;
+  z-index: 5;
+}
+
+@keyframes moveUpDown01 {
+  0% {
+    bottom: 45px; /* 起始位置 */
+  }
+  50% {
+    bottom: 65px; /* 中间位置，缩小移动范围 */
+  }
+  100% {
+    bottom: 45px; /* 结束位置，返回起始位置 */
+  }
+}
+@keyframes moveUpDown02 {
+  0% {
+    bottom: 110px; /* 起始位置 */
+  }
+  50% {
+    bottom: 150px; /* 中间位置，缩小移动范围 */
+  }
+  100% {
+    bottom: 110px; /* 结束位置，返回起始位置 */
+  }
+}
+/*-----------------------------------*\
+  #MEDIA QUERIES 響應式設計
+\*-----------------------------------*/
+/**
+ * responsive for large than 575px screen
+ */
+@media (min-width: 575px) {
+  /**
+   * CLIENT, ABOUT & SKILL
+   */
+  .client .slider-item {
+    min-width: calc(33.33% - 20px);
+  }
+  .w-100,
+  .pos-3d,
+  .about-banner,
+  .skill-banner {
+    max-width: 100%;
+    display: flex;
+  }
+}
+/**
+ * responsive for large than 768px screen
+ */
+@media (min-width: 768px) {
+  /**
+   * HERO
+   */
+  .header-content p {
+    --fs-18: 2rem;
+  }
+  .hero::after {
+    top: -20%;
+    bottom: 50%;
+    left: 48%;
+    right: -15%;
+  }
+  /**
+   * CLIENT
+   */
+  .client .slider-item {
+    min-width: calc(25% - 22.5px);
+  }
+  /**
+   * TESTIMONIALS
+   */
+  .testi .slider-item {
+    min-width: calc(50% - 15px);
+  }
+}
+/**
+ * responsive for large than 992px screen
+ */
+@media (min-width: 992px) {
+  /**
+   * HERO, ABOUT, SKILL
+   */
+  :is(.hero, .about, .skill) .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+  /**
+   * HERO
+   */
+  .hero {
+    text-align: left;
+  }
+  .hero .btn {
+    margin-inline: 0;
+  }
+  /**
+   * CLIENT
+   */
+  .client .slider-item {
+    min-width: calc(20% - 24px);
+  }
+  /**
+   * SKILL
+   */
+  .skill .container {
+    align-items: flex-start;
+  }
+}
+/**
+ * responsive for large than 1200px screen
+ */
+@media (min-width: 1200px) {
+  /**
+   * ABOUT
+   */
+  .about-list {
+    gap: 40px;
+  }
+}/*# sourceMappingURL=style.css.map */

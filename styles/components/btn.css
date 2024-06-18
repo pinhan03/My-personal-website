@@ -1,0 +1,59 @@
+/*-----------------------------------*\
+  #btn.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 codewithsadee
+ */
+
+.btn {
+  background-color: #f97c08; /* var(--orange-red) */
+  font-size: 14px; /* var(--fs-14) */
+  font-weight: 500; /* var(--fw-500) */
+  text-transform: uppercase;
+  text-decoration: none;
+  max-width: max-content;
+  letter-spacing: 2px;
+  padding: 10px 22px;
+  box-shadow: 6px 6px 0 -1px #2b4a80; /* var(--shadow-color, var(--jet)) */
+  transition: all 0.3s ease; /* var(--transition-1) */
+}
+
+.btn-orange-shadow {
+  box-shadow: 6px 6px 0 -1px #f97c08; /* 橘色陰影 */
+}
+
+.btn:is(:hover, :focus-visible) {
+  background-color: #2b4a80; /* var(--hover-bg, var(--jet)) */
+  box-shadow: 5px 5px 0 -2px #f97c08; /* var(--hover-shadow-color, var(--orange-red)) */
+}
+
+.btn-primary,
+.btn-secondary {
+  color: #ffffff; /* var(--white) */
+}
+
+.btn-secondary {
+  background-color: #2b4a80; /* var(--jet) */
+  --shadow-color: #f97c08; /* var(--orange-red) */
+  /* --hover-bg: #f97c08; /* var(--orange-red) */
+  /* --hover-shadow-color: #2b4a80; var(--jet) */
+}
+
+.btn-secondary:is(:hover, :focus-visible) {
+  background-color: #f97c08; /* 滑過時的背景色保持橘色 */
+  box-shadow: 5px 5px 0 -2px #2b4a80; /* 滑過時的陰影色保持藍色 */
+}
+
+.btn-tertiary {
+  color: #ffffff; /* var(--jet) */
+  background-color: #f97c08; /* var(--maximum-yellow-red) */
+  --shadow-color: #f97c08; /* var(--orange-red) */
+  --hover-bg: #f97c08; /* var(--orange-red) */
+  --hover-shadow-color: #ffd700; /* var(--maximum-yellow-red) */
+}
+
+.btn-tertiary:hover,
+.btn-tertiary:focus-visible {
+  color: #ffffff; /* var(--white) */
+}
